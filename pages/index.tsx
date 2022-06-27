@@ -1,4 +1,27 @@
+import { useState } from "react";
+
 export default function Home() {
+  const [email, setEmail] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const submit = async () => {
+    setSubmitting(true);
+    const res = await fetch("/api/subscribe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    });
+
+    if (!res.ok) {
+      alert(`Error ${res.status}: ${await res.text()}`);
+    } else {
+      setSuccess(true);
+    }
+    setEmail("");
+    setSubmitting(false);
+  };
   return (
     <div className="px-6 py-14">
       <main className="mx-auto max-w-3xl text-lg">
@@ -40,11 +63,29 @@ export default function Home() {
               id="email"
               type="email"
               placeholder="email@example.com"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setSuccess(false);
+              }}
             />
-            <button className="rounded-md bg-gradient-to-tr from-accent-400 to-fuchsia-400 px-4 py-1">
+            <button
+              disabled={!email || submitting}
+              onClick={(e) => {
+                e.preventDefault();
+                submit();
+              }}
+              className="rounded-md bg-gradient-to-tr from-accent-400 to-fuchsia-400 px-4 py-1"
+            >
               Submit
             </button>
           </div>
+          {success ? (
+            <span className="text-base text-blue-200">
+              Success! You've been added to our interest form and should receive
+              a confirmation email shortly.
+            </span>
+          ) : null}
         </div>
       </main>
     </div>
