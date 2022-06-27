@@ -75,7 +75,7 @@ export default function Home() {
                 e.preventDefault();
                 submit();
               }}
-              className="rounded-md bg-gradient-to-tr from-accent-400 to-fuchsia-400 px-4 py-1"
+              className="rounded-md bg-gradient-to-tr from-accent-400 to-fuchsia-400 px-4 py-1 font-semibold hover:saturate-150 focus:saturate-150 disabled:cursor-not-allowed disabled:saturate-50"
             >
               Submit
             </button>
