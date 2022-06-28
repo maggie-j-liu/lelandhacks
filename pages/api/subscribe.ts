@@ -3,13 +3,19 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { db } from "../../lib/firebaseAdmin";
 import generateSignedUrl from "../../lib/generateSignedUrl";
 import { stripHtml } from "string-strip-html";
+import { validate } from "email-validator";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (!req.body?.email) {
-    res.status(400).json({ error: "Email is required" });
+    res.status(400).send("Email is required");
     return;
   }
+
   const { email } = req.body;
+  if (!validate(email)) {
+    res.status(400).send("Invalid email");
+    return;
+  }
 
   const existing = await db
     .collection("subscribers")
@@ -17,7 +23,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     .limit(1)
     .get();
   if (!existing.empty) {
-    res.status(400).json({ error: "You are already subscribed." });
+    res.status(400).send("You are already subscribed");
     return;
   }
 
@@ -34,7 +40,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   baseUnsubscribeUrl.searchParams.set("email", email);
 
   const signedUrl = generateSignedUrl(baseUnsubscribeUrl);
-
   const htmlMessage = `<div>Hey there!</div>
 <br/>
 <div>Thanks for signing up for the <a href="https://lelandhacks.com">LelandHacks</a> interest form! We'll notify you when registrations are open.</div>
@@ -73,7 +78,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   );
 
   if (!response.ok) {
-    res.status(400).send(await response.text());
+    res
+      .status(400)
+      .send(
+        `We have added you to our mailing list, but there was an error in sending you an email: ${await response.text()}`
+      );
     return;
   }
   res.send("Success");

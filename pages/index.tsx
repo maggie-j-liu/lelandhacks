@@ -23,7 +23,7 @@ export default function Home() {
     });
 
     if (!res.ok) {
-      setError(`Error ${res.status}: ${await res.text()}`);
+      setError(`Error: ${await res.text()}`);
     } else {
       setSuccess(true);
     }
@@ -42,14 +42,14 @@ export default function Home() {
         <div className="my-6 space-y-4 text-2xl font-light">
           <p>
             LelandHacks will be an{" "}
-            <span className="font-semibold text-accent-300">
+            <span className="font-semibold text-primary-300">
               in-person hackathon
             </span>{" "}
             hosted at Leland High School in San Jose, CA.
           </p>
           <p>
             We'll bring together high school students for 12 hours of{" "}
-            <span className="font-semibold text-accent-300">
+            <span className="font-semibold text-primary-300">
               hacking, workshops, and forming connections
             </span>
             . Even if you've never programmed before, don't worry! You'll have
@@ -84,15 +84,19 @@ export default function Home() {
                 e.preventDefault();
                 submit();
               }}
-              className="rounded-md bg-gradient-to-tr from-accent-400 to-fuchsia-400 px-4 py-1 font-semibold hover:saturate-150 focus:saturate-150 disabled:cursor-not-allowed disabled:saturate-50"
+              className="rounded-md bg-gradient-to-tr from-primary-400 to-fuchsia-400 px-4 py-1 font-semibold hover:saturate-150 focus:saturate-150 disabled:cursor-not-allowed disabled:saturate-50"
             >
               Submit
             </button>
           </div>
           {success ? (
-            <span className="text-base text-blue-200">
+            <span className="mt-2 block text-base leading-snug text-blue-200">
               Success! You've been added to our interest form and should receive
-              a confirmation email shortly.
+              a confirmation email shortly. If not, please email us at{" "}
+              <a href="mailto:team@lelandhacks.com" className="underline">
+                team@lelandhacks.com
+              </a>
+              .
             </span>
           ) : null}
           {error.length > 0 ? (
