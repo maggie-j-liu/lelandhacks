@@ -1,11 +1,19 @@
 import { useState } from "react";
+import emailValidator from "email-validator";
 
 export default function Home() {
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
   const submit = async () => {
     setSubmitting(true);
+    const isValid = emailValidator.validate(email);
+    if (!isValid) {
+      setError("Invalid email.");
+      setSubmitting(false);
+      return;
+    }
     const res = await fetch("/api/subscribe", {
       method: "POST",
       headers: {
@@ -15,7 +23,7 @@ export default function Home() {
     });
 
     if (!res.ok) {
-      alert(`Error ${res.status}: ${await res.text()}`);
+      setError(`Error ${res.status}: ${await res.text()}`);
     } else {
       setSuccess(true);
     }
@@ -59,7 +67,7 @@ export default function Home() {
           </label>
           <div className="flex gap-4">
             <input
-              className="w-96 rounded-md bg-gray-600 px-2"
+              className="w-96 rounded-md bg-gray-600 px-2 invalid:outline invalid:outline-2 invalid:outline-red-300"
               id="email"
               type="email"
               placeholder="email@example.com"
@@ -67,6 +75,7 @@ export default function Home() {
               onChange={(e) => {
                 setEmail(e.target.value);
                 setSuccess(false);
+                setError("");
               }}
             />
             <button
@@ -85,6 +94,9 @@ export default function Home() {
               Success! You've been added to our interest form and should receive
               a confirmation email shortly.
             </span>
+          ) : null}
+          {error.length > 0 ? (
+            <span className="text-base text-red-200">{error}</span>
           ) : null}
         </div>
       </main>
