@@ -20,8 +20,10 @@ const Meta = () => {
       />
       <EventJsonLd
         name="Leland Hacks"
-        startDate="2022-09-10"
-        endDate="2022-09-10"
+        startDate="2022-09-17"
+        endDate="2022-09-17"
+        eventStatus="https://schema.org/EventScheduled"
+        eventAttendanceMode="https://schema.org/OfflineEventAttendanceMode"
         location={{
           name: "Leland High School",
           address: {
@@ -34,6 +36,17 @@ const Meta = () => {
         }}
         url={url}
         description="Leland Hacks is a high school hackathon that will be held at Leland High School in September 2022. We'll bring together high school students for 12 hours of hacking, workshops, and forming connections."
+        offers={{
+          price: "0",
+          priceCurrency: "USD",
+          url: url,
+          availability: "https://schema.org/PreOrder",
+        }}
+        organizer={{
+          "@type": "Organization",
+          name: "Leland Computer Science Club",
+          url: "https://lelandcs.vercel.app",
+        }}
       />
     </>
   );
