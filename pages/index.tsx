@@ -2,6 +2,7 @@ import { useState } from "react";
 import emailValidator from "email-validator";
 import Meta from "../components/Meta";
 import Faq from "../components/Faq";
+import Lightning from "../components/Lightning";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -38,7 +39,12 @@ export default function Home() {
       <div className="px-6 py-14">
         <main className="mx-auto max-w-3xl space-y-12 text-lg">
           <section>
-            <h1 className="text-4xl font-bold">Leland Hacks ⚡</h1>
+            <h1 className="text-7xl font-bold text-secondary-300">
+              Leland Hacks{" "}
+              <span className="text-primary-300">
+                <Lightning />
+              </span>
+            </h1>
             <div className="font-extralight">
               <p>
                 <span className="hue-rotate-60 saturate-200">📅</span> September
