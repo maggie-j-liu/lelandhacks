@@ -33,15 +33,15 @@ export default function Home() {
   return (
     <div className="px-6 py-14">
       <main className="mx-auto max-w-3xl text-lg">
-        <h1 className="text-4xl font-bold">LelandHacks</h1>
+        <h1 className="text-4xl font-bold">Leland Hacks</h1>
         <div className="font-extralight">
-          <p>⏰ September 2022</p>
+          <p>📅 September 2022</p>
           <p>📍 Leland High School</p>
         </div>
 
         <div className="my-6 space-y-4 text-2xl font-light">
           <p>
-            LelandHacks will be an{" "}
+            Leland Hacks will be an{" "}
             <span className="font-semibold text-primary-300">
               in-person hackathon
             </span>{" "}
@@ -49,16 +49,19 @@ export default function Home() {
           </p>
           <p>
             We'll bring together high school students for 12 hours of{" "}
+            <span className="font-semibold text-primary-300">hacking</span>,{" "}
+            <span className="font-semibold text-primary-300">workshops</span>,
+            and{" "}
             <span className="font-semibold text-primary-300">
-              hacking, workshops, and forming connections
+              forming connections
             </span>
             . Even if you've never programmed before, don't worry! You'll have
             plenty of support to learn to code, and will walk away with a new
             skill.
           </p>
           <p>
-            Sign up on the interest form below to be notified of more
-            information.
+            Sign up on the interest form below to be notified when registrations
+            open.
           </p>
         </div>
         <div className="text-2xl">

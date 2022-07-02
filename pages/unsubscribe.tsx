@@ -35,7 +35,7 @@ const UnsubscribePage = ({ verified, ...props }: { verified: boolean }) => {
     <div className="px-8 py-14">
       <main className="mx-auto max-w-3xl text-lg">
         <h1 className="mb-4 text-3xl font-bold">
-          Unsubscribe from the LelandHacks mailing list
+          Unsubscribe from the Leland Hacks mailing list
         </h1>
         {error ? (
           <p>{error}</p>

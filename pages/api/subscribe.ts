@@ -42,14 +42,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const signedUrl = generateSignedUrl(baseUnsubscribeUrl);
   const htmlMessage = `<div>Hey there!</div>
 <br/>
-<div>Thanks for signing up for the <a href="https://lelandhacks.com">LelandHacks</a> interest form! We'll notify you when registrations are open.</div>
+<div>Thanks for signing up for the <a href="https://lelandhacks.com">Leland Hacks</a> interest form! We'll notify you when registrations are open.</div>
 <br />
 <div>Happy hacking!</div>
-<div>LelandHacks Team</div>
+<div>Leland Hacks Team</div>
 <br />
 <small><a href="${signedUrl}">Unsubscribe</a></small>`;
 
-  // mailchannels dkim currently not working with multiple content-types :(
   // const textMessage = stripHtml(htmlMessage, {
   //   dumpLinkHrefsNearby: {
   //     enabled: true,
@@ -60,7 +59,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   // }).result;
 
   const response = await fetch(
-    "https://mailinglist.lelandcs.workers.dev/sendEmail",
+    `${
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:8787"
+        : "https://mailinglist.lelandcs.workers.dev"
+    }/sendEmail`,
     {
       method: "POST",
       headers: {
@@ -72,7 +75,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         htmlMessage,
         subject: `${
           process.env.NODE_ENV === "development" ? "[Testing] " : ""
-        }LelandHacks Interest Form`,
+        }Leland Hacks Interest Form`,
       }),
     }
   );
