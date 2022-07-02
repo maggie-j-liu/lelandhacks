@@ -87,13 +87,13 @@ export default function Home() {
                 e.preventDefault();
                 submit();
               }}
-              className="rounded-md bg-gradient-to-tr from-primary-400 to-fuchsia-400 px-4 py-1 font-semibold hover:saturate-150 focus:saturate-150 disabled:cursor-not-allowed disabled:saturate-50"
+              className="rounded-md bg-gradient-to-tr from-primary-400 to-pink-400 px-4 py-1 font-semibold hover:saturate-150 focus:saturate-150 disabled:cursor-not-allowed disabled:saturate-50"
             >
               Submit
             </button>
           </div>
           {success ? (
-            <span className="mt-2 block text-base leading-snug text-blue-200">
+            <span className="mt-2 block text-base leading-snug text-secondary-200">
               Success! You've been added to our interest form and should receive
               a confirmation email shortly. If not, please email us at{" "}
               <a href="mailto:team@lelandhacks.com" className="underline">
