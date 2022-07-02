@@ -1,6 +1,7 @@
 import { useState } from "react";
 import emailValidator from "email-validator";
 import Meta from "../components/Meta";
+import Faq from "../components/Faq";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -35,86 +36,97 @@ export default function Home() {
     <>
       <Meta />
       <div className="px-6 py-14">
-        <main className="mx-auto max-w-3xl text-lg">
-          <h1 className="text-4xl font-bold">Leland Hacks ⚡</h1>
-          <div className="font-extralight">
-            <p>
-              <span className="hue-rotate-60 saturate-200">📅</span> September
-              2022
-            </p>
-            <p>
-              <span className="hue-rotate-60 saturate-200">📍</span> Leland High
-              School
-            </p>
-          </div>
-
-          <div className="my-6 space-y-4 text-2xl font-[number:350]">
-            <p>
-              Leland Hacks will be an{" "}
-              <span className="font-semibold text-primary-300">
-                in-person hackathon
-              </span>{" "}
-              hosted at Leland High School in San Jose, CA.
-            </p>
-            <p>
-              We'll bring together high school students for 12 hours of{" "}
-              <span className="font-semibold text-primary-300">hacking</span>,{" "}
-              <span className="font-semibold text-primary-300">workshops</span>,
-              and{" "}
-              <span className="font-semibold text-primary-300">
-                forming connections
-              </span>
-              . Even if you've never programmed before, don't worry! You'll have
-              plenty of support to learn to code, and will walk away with a new
-              skill.
-            </p>
-            <p>
-              Sign up on the interest form below to be notified when
-              registrations open.
-            </p>
-          </div>
-          <div className="text-2xl">
-            <label htmlFor="email" className="block font-semibold">
-              Email
-            </label>
-            <div className="flex items-stretch gap-4">
-              <input
-                className="w-96 rounded-md bg-gray-600 px-2 invalid:outline invalid:outline-2 invalid:outline-red-400"
-                id="email"
-                type="email"
-                placeholder="email@example.com"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                  setSuccess(false);
-                  setError("");
-                }}
-              />
-              <button
-                disabled={!email || submitting}
-                onClick={(e) => {
-                  e.preventDefault();
-                  submit();
-                }}
-                className="rounded-md bg-gradient-to-tr from-primary-400 to-pink-400 px-4 pb-1 pt-2 font-semibold hover:saturate-150 focus:saturate-150 disabled:cursor-not-allowed disabled:saturate-50"
-              >
-                Submit
-              </button>
+        <main className="mx-auto max-w-3xl space-y-12 text-lg">
+          <section>
+            <h1 className="text-4xl font-bold">Leland Hacks ⚡</h1>
+            <div className="font-extralight">
+              <p>
+                <span className="hue-rotate-60 saturate-200">📅</span> September
+                2022
+              </p>
+              <p>
+                <span className="hue-rotate-60 saturate-200">📍</span> Leland
+                High School
+              </p>
             </div>
-            {success ? (
-              <span className="mt-2 block text-base leading-snug text-secondary-200">
-                Success! You've been added to our interest form and should
-                receive a confirmation email shortly. If not, please email us at{" "}
-                <a href="mailto:team@lelandhacks.com" className="underline">
-                  team@lelandhacks.com
-                </a>
-                .
-              </span>
-            ) : null}
-            {error.length > 0 ? (
-              <span className="text-base text-red-200">{error}</span>
-            ) : null}
-          </div>
+
+            <div className="my-6 space-y-4 text-2xl font-[number:350]">
+              <p>
+                Leland Hacks will be an{" "}
+                <span className="font-semibold text-primary-300">
+                  in-person hackathon
+                </span>{" "}
+                hosted at Leland High School in San Jose, CA.
+              </p>
+              <p>
+                We'll bring together high school students for 12 hours of{" "}
+                <span className="font-semibold text-primary-300">hacking</span>,{" "}
+                <span className="font-semibold text-primary-300">
+                  workshops
+                </span>
+                , and{" "}
+                <span className="font-semibold text-primary-300">
+                  forming connections
+                </span>
+                . Even if you've never programmed before, don't worry! You'll
+                have plenty of support to learn to code, and will walk away with
+                a new skill.
+              </p>
+            </div>
+            <div
+              className="-mx-4 rounded-md bg-secondary-800/50 px-4 py-4 text-2xl"
+              id="interest-form"
+            >
+              <p>
+                Sign up on the interest form to be notified when registrations
+                open.
+              </p>
+              <label htmlFor="email" className="mt-2 block font-semibold">
+                Email
+              </label>
+              <div className="flex items-stretch gap-4">
+                <input
+                  className="w-96 rounded-md bg-gray-600 px-2 invalid:outline invalid:outline-2 invalid:outline-red-400"
+                  id="email"
+                  type="email"
+                  placeholder="email@example.com"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    setSuccess(false);
+                    setError("");
+                  }}
+                />
+                <button
+                  disabled={!email || submitting}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    submit();
+                  }}
+                  className="rounded-md bg-gradient-to-tr from-primary-400 to-pink-400 px-4 pb-1 pt-2 font-semibold hover:saturate-150 focus:saturate-150 disabled:cursor-not-allowed disabled:saturate-50"
+                >
+                  Submit
+                </button>
+              </div>
+              {success ? (
+                <span className="mt-2 block text-base leading-snug text-secondary-200">
+                  Success! You've been added to our interest form and should
+                  receive a confirmation email shortly. If not, please email us
+                  at{" "}
+                  <a href="mailto:team@lelandhacks.com" className="underline">
+                    team@lelandhacks.com
+                  </a>
+                  .
+                </span>
+              ) : null}
+              {error.length > 0 ? (
+                <span className="text-base text-red-200">{error}</span>
+              ) : null}
+            </div>
+          </section>
+          <section>
+            <Faq />
+          </section>
         </main>
       </div>
     </>

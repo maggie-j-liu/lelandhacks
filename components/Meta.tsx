@@ -16,6 +16,18 @@ const Meta = () => {
           description,
           url,
           type: "website",
+          images: [
+            {
+              url: `${url}/og-image.png`,
+              width: 1200,
+              height: 630,
+              alt: "Leland Hacks. An in-person hackathon in San Jose, CA. September 2022",
+              type: "image/png",
+            },
+          ],
+        }}
+        twitter={{
+          cardType: "summary_large_image",
         }}
       />
       <EventJsonLd
@@ -47,6 +59,7 @@ const Meta = () => {
           name: "Leland Computer Science Club",
           url: "https://lelandcs.vercel.app",
         }}
+        images={[`${url}/og-image.png`]}
       />
     </>
   );
