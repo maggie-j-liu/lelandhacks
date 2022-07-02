@@ -2,7 +2,7 @@ import { NextSeo, EventJsonLd } from "next-seo";
 
 const title = "Leland Hacks";
 const description =
-  "Leland Hacks is a 12-hour high school hackathon, held in-person in September 2022.";
+  "Leland Hacks is a 12-hour high school hackathon that will be held in-person in September 2022, at Leland High School in San Jose, CA.";
 const url = "https://lelandhacks.com";
 
 const Meta = () => {
