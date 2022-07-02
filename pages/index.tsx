@@ -33,13 +33,19 @@ export default function Home() {
   return (
     <div className="px-6 py-14">
       <main className="mx-auto max-w-3xl text-lg">
-        <h1 className="text-4xl font-bold">Leland Hacks</h1>
+        <h1 className="text-4xl font-bold">Leland Hacks ⚡</h1>
         <div className="font-extralight">
-          <p>📅 September 2022</p>
-          <p>📍 Leland High School</p>
+          <p>
+            <span className="hue-rotate-60 saturate-200">📅</span> September
+            2022
+          </p>
+          <p>
+            <span className="hue-rotate-60 saturate-200">📍</span> Leland High
+            School
+          </p>
         </div>
 
-        <div className="my-6 space-y-4 text-2xl font-light">
+        <div className="my-6 space-y-4 text-2xl font-[number:350]">
           <p>
             Leland Hacks will be an{" "}
             <span className="font-semibold text-primary-300">
@@ -68,9 +74,9 @@ export default function Home() {
           <label htmlFor="email" className="block font-semibold">
             Email
           </label>
-          <div className="flex gap-4">
+          <div className="flex items-stretch gap-4">
             <input
-              className="w-96 rounded-md bg-gray-600 px-2 invalid:outline invalid:outline-2 invalid:outline-red-300"
+              className="w-96 rounded-md bg-gray-600 px-2 invalid:outline invalid:outline-2 invalid:outline-red-400"
               id="email"
               type="email"
               placeholder="email@example.com"
@@ -87,7 +93,7 @@ export default function Home() {
                 e.preventDefault();
                 submit();
               }}
-              className="rounded-md bg-gradient-to-tr from-primary-400 to-pink-400 px-4 py-1 font-semibold hover:saturate-150 focus:saturate-150 disabled:cursor-not-allowed disabled:saturate-50"
+              className="rounded-md bg-gradient-to-tr from-primary-400 to-pink-400 px-4 pb-1 pt-2 font-semibold hover:saturate-150 focus:saturate-150 disabled:cursor-not-allowed disabled:saturate-50"
             >
               Submit
             </button>
