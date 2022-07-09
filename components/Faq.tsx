@@ -32,7 +32,9 @@ const Link = ({ children, href }: { children: ReactNode; href: string }) => {
 const Faq = () => {
   return (
     <>
-      <h1 className="text-3xl font-bold">Frequently Asked Questions</h1>
+      <h2 className="text-3xl font-bold" id="faq">
+        Frequently Asked Questions
+      </h2>
       <dl>
         <Q>What is a hackathon?</Q>
         <A>

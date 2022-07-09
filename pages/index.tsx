@@ -109,7 +109,7 @@ export default function Home() {
                     e.preventDefault();
                     submit();
                   }}
-                  className="rounded-md bg-gradient-to-tr from-primary-400 to-pink-400 px-4 pb-1 pt-2 font-semibold hover:saturate-150 focus:saturate-150 disabled:cursor-not-allowed disabled:saturate-50"
+                  className="rounded-md bg-gradient-to-tr from-primary-500 to-pink-400 px-4 pb-1 pt-2 font-semibold hover:saturate-150 focus:saturate-150 disabled:cursor-not-allowed disabled:saturate-50"
                 >
                   Submit
                 </button>
@@ -132,6 +132,28 @@ export default function Home() {
           </section>
           <section>
             <Faq />
+          </section>
+          <section>
+            <h2 className="text-3xl font-bold" id="sponsors">
+              Sponsors
+            </h2>
+            <p>
+              Want to help make Leland Hacks possible and inspire dozens of high
+              school students to code? Email us at{" "}
+              <a
+                href="mailto:team@lelandhacks.com"
+                className="text-primary-300 hover:underline"
+              >
+                team@lelandhacks.com
+              </a>{" "}
+              to get involved!
+            </p>
+            <a
+              href="/prospectus.pdf"
+              className="mt-2 block w-max rounded-md bg-gradient-to-tr from-primary-500 to-pink-400 px-4 pb-1 pt-2 font-semibold hover:saturate-150 focus:saturate-150"
+            >
+              View Sponsorship Prospectus
+            </a>
           </section>
         </main>
       </div>

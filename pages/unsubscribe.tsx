@@ -18,6 +18,7 @@ const UnsubscribePage = ({ verified, ...props }: { verified: boolean }) => {
     email: string;
   };
   const unsubscribe = async () => {
+    setSubmitting(true);
     const res = await fetch(`/api/unsubscribe`, {
       method: "POST",
       headers: {
@@ -30,11 +31,17 @@ const UnsubscribePage = ({ verified, ...props }: { verified: boolean }) => {
     } else {
       setError(await res.text());
     }
+    setSubmitting(false);
   };
   return (
     <div className="px-8 py-14">
       <main className="mx-auto max-w-3xl text-lg">
-        <h1 className="mb-4 text-3xl font-bold">
+        <Link href="/">
+          <a className="text-primary-100 hover:text-primary-200 focus:text-primary-200">
+            &larr; Go Home
+          </a>
+        </Link>
+        <h1 className="mb-4 mt-6 text-3xl font-bold">
           Unsubscribe from the Leland Hacks mailing list
         </h1>
         {error ? (
@@ -67,7 +74,7 @@ const UnsubscribePage = ({ verified, ...props }: { verified: boolean }) => {
                 e.preventDefault();
                 unsubscribe();
               }}
-              className="mt-6 rounded-md bg-primary-500 px-4 py-1 font-semibold hover:bg-primary-600 focus:bg-primary-600 disabled:cursor-not-allowed disabled:saturate-50"
+              className="mt-6 rounded-md bg-primary-600 px-4 py-1 font-semibold hover:bg-primary-700 focus:bg-primary-700 disabled:cursor-not-allowed disabled:saturate-50"
             >
               {submitting ? "Unsubscribing" : "Unsubscribe"}
             </button>

@@ -49,14 +49,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 <br />
 <small><a href="${signedUrl}">Unsubscribe</a></small>`;
 
-  // const textMessage = stripHtml(htmlMessage, {
-  //   dumpLinkHrefsNearby: {
-  //     enabled: true,
-  //     putOnNewLine: false,
-  //     wrapHeads: "<",
-  //     wrapTails: ">",
-  //   },
-  // }).result;
+  const textMessage = stripHtml(htmlMessage, {
+    dumpLinkHrefsNearby: {
+      enabled: true,
+      putOnNewLine: false,
+      wrapHeads: "<",
+      wrapTails: ">",
+    },
+  }).result;
 
   const response = await fetch(
     `${
@@ -73,6 +73,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       body: JSON.stringify({
         email,
         htmlMessage,
+        textMessage,
         subject: `${
           process.env.NODE_ENV === "development" ? "[Testing] " : ""
         }Leland Hacks Interest Form`,
