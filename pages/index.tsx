@@ -3,6 +3,8 @@ import emailValidator from "email-validator";
 import Meta from "../components/Meta";
 import Faq from "../components/Faq";
 import Lightning from "../components/Lightning";
+import sagacent from "../sponsors/sagacent.png";
+import Image from "next/future/image";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -137,6 +139,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold" id="sponsors">
               Sponsors
             </h2>
+            <p>Thank you to these companies for supporting Leland Hacks!</p>
             <p>
               Want to help make Leland Hacks possible and inspire dozens of high
               school students to code? Email us at{" "}
@@ -154,6 +157,17 @@ export default function Home() {
             >
               View Sponsorship Prospectus
             </a>
+            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <a
+                href="https://www.sagacent.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div className="flex h-full w-full items-center justify-center rounded-xl bg-yellow-50 px-4 py-4 duration-300 hover:scale-105 hover:duration-150 focus:bg-yellow-100">
+                  <Image src={sagacent} alt="Sagacent Technologies Logo" />
+                </div>
+              </a>
+            </div>
           </section>
         </main>
       </div>
