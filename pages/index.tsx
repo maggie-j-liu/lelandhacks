@@ -5,6 +5,10 @@ import Faq from "../components/Faq";
 import Lightning from "../components/Lightning";
 import sagacent from "../sponsors/sagacent.png";
 import Image from "next/future/image";
+import Sponsor from "../components/Sponsor";
+import MailChannels from "../sponsors/MailChannels";
+import beaverworks from "../sponsors/beaverworks.png";
+import Prisma from "../sponsors/Prisma";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -158,15 +162,21 @@ export default function Home() {
               View Sponsorship Prospectus
             </a>
             <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <a
-                href="https://www.sagacent.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <div className="flex h-full w-full items-center justify-center rounded-xl bg-yellow-50 px-4 py-4 duration-300 hover:scale-105 hover:duration-150 focus:bg-yellow-100">
-                  <Image src={sagacent} alt="Sagacent Technologies Logo" />
-                </div>
-              </a>
+              <Sponsor link="https://www.sagacent.com">
+                <Image src={sagacent} alt="Sagacent Technologies Logo" />
+              </Sponsor>
+              <Sponsor link="https://mailchannels.com">
+                <MailChannels />
+              </Sponsor>
+            </div>
+            <p className="mt-6">With support from:</p>
+            <div className="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-3">
+              <Sponsor link="https://beaverworks.ll.mit.edu">
+                <Image src={beaverworks} alt="Beaver Works Logo" />
+              </Sponsor>
+              <Sponsor link="https://www.prisma.io">
+                <Prisma />
+              </Sponsor>
             </div>
           </section>
         </main>
