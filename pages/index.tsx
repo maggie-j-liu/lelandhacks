@@ -11,6 +11,7 @@ import beaverworks from "../sponsors/beaverworks.png";
 import Prisma from "../sponsors/Prisma";
 import bay_area_kids_clubs from "../sponsors/bay_area_kids_clubs.png";
 import Footer from "../components/Footer";
+import ottersec from "../sponsors/ottersec.png";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -183,6 +184,13 @@ export default function Home() {
                     className="h-full object-contain"
                     src={bay_area_kids_clubs}
                     alt="Bay Area Kids Clubs Logo"
+                  />
+                </Sponsor>
+                <Sponsor link="https://osec.io">
+                  <Image
+                    className="h-full object-contain invert"
+                    src={ottersec}
+                    alt="OtterSec Logo"
                   />
                 </Sponsor>
               </div>
