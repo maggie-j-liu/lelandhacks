@@ -182,7 +182,12 @@ export default function Home() {
               </Sponsor>
             </div>
             <p className="mt-6">With support from:</p>
-            <div className="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <div className="mt-1 grid grid-cols-1 gap-4 text-black sm:grid-cols-3">
+              <Sponsor small link="https://www.pandemonium.capital">
+                <div className="text-base font-semibold">
+                  💥 Pandemonium Capital 💥
+                </div>
+              </Sponsor>
               <Sponsor small link="https://beaverworks.ll.mit.edu">
                 <Image
                   className="h-full object-contain"
