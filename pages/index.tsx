@@ -9,6 +9,7 @@ import Sponsor from "../components/Sponsor";
 import MailChannels from "../sponsors/MailChannels";
 import beaverworks from "../sponsors/beaverworks.png";
 import Prisma from "../sponsors/Prisma";
+import bay_area_kids_clubs from "../sponsors/bay_area_kids_clubs.png";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -163,18 +164,33 @@ export default function Home() {
             </a>
             <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
               <Sponsor link="https://www.sagacent.com">
-                <Image src={sagacent} alt="Sagacent Technologies Logo" />
+                <Image
+                  className="h-full object-contain"
+                  src={sagacent}
+                  alt="Sagacent Technologies Logo"
+                />
               </Sponsor>
               <Sponsor link="https://mailchannels.com">
                 <MailChannels />
               </Sponsor>
+              <Sponsor /* link="https://bayareakidsclub.com" */>
+                <Image
+                  className="h-full object-contain"
+                  src={bay_area_kids_clubs}
+                  alt="Bay Area Kids Clubs Logo"
+                />
+              </Sponsor>
             </div>
             <p className="mt-6">With support from:</p>
             <div className="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-3">
-              <Sponsor link="https://beaverworks.ll.mit.edu">
-                <Image src={beaverworks} alt="Beaver Works Logo" />
+              <Sponsor small link="https://beaverworks.ll.mit.edu">
+                <Image
+                  className="h-full object-contain"
+                  src={beaverworks}
+                  alt="Beaver Works Logo"
+                />
               </Sponsor>
-              <Sponsor link="https://www.prisma.io">
+              <Sponsor small link="https://www.prisma.io">
                 <Prisma />
               </Sponsor>
             </div>
