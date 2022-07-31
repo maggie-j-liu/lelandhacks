@@ -58,11 +58,15 @@ export default function Home() {
               <div className="font-extralight">
                 <p>
                   <span className="hue-rotate-60 saturate-200">📅</span>{" "}
-                  September 2022
+                  September 18, 2022
                 </p>
                 <p>
-                  <span className="hue-rotate-60 saturate-200">📍</span> Leland
-                  High School
+                  <span className="hue-rotate-60 saturate-200">⏰</span> 9:00 AM
+                  - 9:00 PM
+                </p>
+                <p>
+                  <span className="hue-rotate-60 saturate-200">📍</span>{" "}
+                  Vineland Branch Library
                 </p>
               </div>
 
@@ -72,10 +76,19 @@ export default function Home() {
                   <span className="font-semibold text-primary-300">
                     in-person hackathon
                   </span>{" "}
-                  hosted at Leland High School in San Jose, CA.
+                  hosted at the{" "}
+                  <a
+                    href="https://goo.gl/maps/wY6vCBqyEanwznf68"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-primary-300 underline"
+                  >
+                    Vineland Branch Library
+                  </a>{" "}
+                  in San Jose, CA.
                 </p>
                 <p>
-                  We'll bring together high school students for 12 hours of{" "}
+                  We'll bring together students for 12 hours of{" "}
                   <span className="font-semibold text-primary-300">
                     hacking
                   </span>
@@ -153,7 +166,7 @@ export default function Home() {
               <p>Thank you to these companies for supporting Leland Hacks!</p>
               <p>
                 Want to help make Leland Hacks possible and inspire dozens of
-                high school students to code? Email us at{" "}
+                students to code? Email us at{" "}
                 <a
                   href="mailto:team@lelandhacks.com"
                   className="text-primary-300 hover:underline"

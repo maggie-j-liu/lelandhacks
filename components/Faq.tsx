@@ -46,12 +46,9 @@ const Faq = () => {
         </A>
         <Q>Who can participate in Leland Hacks?</Q>
         <A>
-          We hope to make the event available to all high school students --
-          whether this is possible or not will depend on Leland's rules in the
-          fall. All Leland students are welcome to attend; if you're not a
-          Leland student, sign up on the{" "}
-          <Link href="#interest-form">interest form</Link> above for more
-          information.
+          All high school and middle school students are welcome to attend. Sign
+          up on the <Link href="#interest-form">interest form</Link> above for
+          more information.
         </A>
         <Q>Do I need to know how to code?</Q>
         <A>
