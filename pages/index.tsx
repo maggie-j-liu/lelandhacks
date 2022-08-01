@@ -6,7 +6,7 @@ import Lightning from "../components/Lightning";
 import sagacent from "../sponsors/sagacent.png";
 import Image from "next/future/image";
 import Sponsor from "../components/Sponsor";
-import MailChannels from "../sponsors/MailChannels";
+import mailchannels from "../sponsors/mailchannels.png";
 import beaverworks from "../sponsors/beaverworks.png";
 import Prisma from "../sponsors/Prisma";
 import bay_area_kids_clubs from "../sponsors/bay_area_kids_clubs.png";
@@ -190,7 +190,11 @@ export default function Home() {
                   />
                 </Sponsor>
                 <Sponsor link="https://mailchannels.com">
-                  <MailChannels />
+                  <Image
+                    className="h-full object-contain"
+                    src={mailchannels}
+                    alt="MailChannels Logo"
+                  />
                 </Sponsor>
                 <Sponsor /* link="https://bayareakidsclub.com" */>
                   <Image
