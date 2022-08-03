@@ -17,12 +17,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     return;
   }
 
-  if (!req.body?.email) {
-    res.status(400).send("Email is required");
+  if (!req.body?.email || !req.body?.name) {
+    res.status(400).send("Email and name are required");
     return;
   }
 
-  const { email } = req.body;
+  const { email, name } = req.body;
   if (!validate(email)) {
     res.status(400).send("Invalid email");
     return;
@@ -51,15 +51,15 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   baseUnsubscribeUrl.searchParams.set("email", email);
 
   const signedUrl = generateSignedUrl(baseUnsubscribeUrl);
-  const htmlMessage = `<div>Hey there!</div>
+  const htmlMessage = `<div>Hey ${name}!</div>
 <br />
 <div>
-  Thanks for registering for
+  Thank you for registering for
   <a href="https://lelandhacks.com">Leland Hacks</a>!
-  Leland Hacks will be held on Sunday September 18th, at the <a href="https://goo.gl/maps/wY6vCBqyEanwznf68">Vineland Branch Library</a>.
+  The hackathon will be held on Sunday September 18th, at the <a href="https://goo.gl/maps/wY6vCBqyEanwznf68">Vineland Branch Library</a>.
   For now, please join our Discord server (<a href="https://discord.gg/t7ZJ7SpFce">https://discord.gg/t7ZJ7SpFce</a>) to connect with other attendees and get updates on the hackathon.
   If you have any questions, feel free to email us at team@lelandhacks.com.
-  We're looking forward to seeing you at Leland Hacks! 
+  We look forward to seeing you at Leland Hacks! 
 </div>
 <br />
 <div>Happy hacking!</div>
