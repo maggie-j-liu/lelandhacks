@@ -6,6 +6,10 @@ import { stripHtml } from "string-strip-html";
 import { validate } from "email-validator";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  if (req.method !== "POST") {
+    res.status(405).send("Method not allowed");
+    return;
+  }
   if (!req.body?.email) {
     res.status(400).send("Email is required");
     return;
@@ -22,32 +26,37 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     .where("email", "==", email)
     .limit(1)
     .get();
-  if (!existing.empty) {
-    res.status(400).send("You are already subscribed");
-    return;
+  if (existing.empty) {
+    await db.collection("subscribers").doc().set({
+      email,
+      subscribedAt: FieldValue.serverTimestamp(),
+    });
   }
-
-  await db.collection("subscribers").doc().set({
-    email,
-    subscribedAt: FieldValue.serverTimestamp(),
-  });
 
   if (!process.env.DOMAIN) {
     throw new Error("DOMAIN environment variable is not set");
   }
-  const baseUnsubscribeUrl = new URL(process.env.DOMAIN as string);
+  const baseUnsubscribeUrl = new URL(process.env.DOMAIN);
   baseUnsubscribeUrl.pathname = "unsubscribe";
   baseUnsubscribeUrl.searchParams.set("email", email);
 
   const signedUrl = generateSignedUrl(baseUnsubscribeUrl);
   const htmlMessage = `<div>Hey there!</div>
-<br/>
-<div>Thanks for signing up for the <a href="https://lelandhacks.com">Leland Hacks</a> interest form! We'll notify you when registrations are open.</div>
+<br />
+<div>
+  Thanks for registering for
+  <a href="https://lelandhacks.com">Leland Hacks</a>!
+  Leland Hacks will be held on Sunday September 18th, at the <a href="https://goo.gl/maps/wY6vCBqyEanwznf68">Vineland Branch Library</a>.
+</div>
+<div>
+  For now, please join our Discord server (<a href="https://discord.gg/t7ZJ7SpFce">https://discord.gg/t7ZJ7SpFce</a>) to connect with other attendees and get updates on the hackathon.
+  If you have any questions, feel free to email us at team@lelandhacks.com.
+  We're looking forward to seeing you at Leland Hacks! 
+</div>
 <br />
 <div>Happy hacking!</div>
 <div>Leland Hacks Team</div>
-<br />
-<small><a href="${signedUrl}">Unsubscribe</a></small>`;
+`;
 
   const textMessage = stripHtml(htmlMessage, {
     dumpLinkHrefsNearby: {
@@ -76,7 +85,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         textMessage,
         subject: `${
           process.env.NODE_ENV === "development" ? "[Testing] " : ""
-        }Leland Hacks Interest Form`,
+        }Thank You for Registering for Leland Hacks ⚡`,
       }),
     }
   );
