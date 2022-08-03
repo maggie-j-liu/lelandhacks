@@ -34,7 +34,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     .limit(1)
     .get();
   if (!existing.empty) {
-    res.status(400).send("You are already subscribed");
+    res.status(200).send("You are already subscribed");
     return;
   }
 
