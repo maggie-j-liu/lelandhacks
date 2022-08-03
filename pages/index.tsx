@@ -105,56 +105,14 @@ export default function Home() {
                   with a new skill.
                 </p>
               </div>
-              <div
-                className="-mx-4 rounded-md bg-secondary-800/50 px-4 py-4 text-2xl"
-                id="interest-form"
+              <a
+                href="https://forms.gle/fRvdzhPejjmZ5yBC6"
+                target="_blank"
+                rel="noreferrer"
+                className="block rounded bg-gradient-to-tr from-secondary-400 to-green-400 px-4 py-2 text-center text-xl font-semibold duration-300 hover:scale-105 hover:duration-150"
               >
-                <p>
-                  Sign up on the interest form to be notified when registrations
-                  open.
-                </p>
-                <label htmlFor="email" className="mt-2 block font-semibold">
-                  Email
-                </label>
-                <div className="flex items-stretch gap-4">
-                  <input
-                    className="w-96 rounded-md bg-gray-600 px-2 invalid:outline invalid:outline-2 invalid:outline-red-400"
-                    id="email"
-                    type="email"
-                    placeholder="email@example.com"
-                    value={email}
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                      setSuccess(false);
-                      setError("");
-                    }}
-                  />
-                  <button
-                    disabled={!email || submitting}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      submit();
-                    }}
-                    className="rounded-md bg-gradient-to-tr from-primary-500 to-pink-400 px-4 pb-1 pt-2 font-semibold hover:saturate-150 focus:saturate-150 disabled:cursor-not-allowed disabled:saturate-50"
-                  >
-                    Submit
-                  </button>
-                </div>
-                {success ? (
-                  <span className="mt-2 block text-base leading-snug text-secondary-200">
-                    Success! You've been added to our interest form and should
-                    receive a confirmation email shortly. If not, please email
-                    us at{" "}
-                    <a href="mailto:team@lelandhacks.com" className="underline">
-                      team@lelandhacks.com
-                    </a>
-                    .
-                  </span>
-                ) : null}
-                {error.length > 0 ? (
-                  <span className="text-base text-red-200">{error}</span>
-                ) : null}
-              </div>
+                Register
+              </a>
             </section>
             <section>
               <Faq />
