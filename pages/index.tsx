@@ -1,6 +1,3 @@
-import { useState } from "react";
-import emailValidator from "email-validator";
-import Meta from "../components/Meta";
 import Faq from "../components/Faq";
 import Lightning from "../components/Lightning";
 import sagacent from "../sponsors/sagacent.png";
@@ -10,38 +7,9 @@ import mailchannels from "../sponsors/mailchannels.png";
 import beaverworks from "../sponsors/beaverworks.png";
 import Prisma from "../sponsors/Prisma";
 import bay_area_kids_clubs from "../sponsors/bay_area_kids_clubs.png";
-import Footer from "../components/Footer";
 import ottersec from "../sponsors/ottersec.png";
 
 export default function Home() {
-  const [email, setEmail] = useState("");
-  const [submitting, setSubmitting] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState("");
-  const submit = async () => {
-    setSubmitting(true);
-    const isValid = emailValidator.validate(email);
-    if (!isValid) {
-      setError("Invalid email.");
-      setSubmitting(false);
-      return;
-    }
-    const res = await fetch("/api/subscribe", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email }),
-    });
-
-    if (!res.ok) {
-      setError(`Error: ${await res.text()}`);
-    } else {
-      setSuccess(true);
-    }
-    setEmail("");
-    setSubmitting(false);
-  };
   return (
     <>
       <main className="space-y-12 text-lg">
@@ -97,14 +65,36 @@ export default function Home() {
               skill.
             </p>
           </div>
-          <a
-            href="https://forms.gle/fRvdzhPejjmZ5yBC6"
-            target="_blank"
-            rel="noreferrer"
-            className="block rounded bg-gradient-to-tr from-secondary-400 to-green-400 px-4 py-2 text-center text-xl font-semibold duration-300 hover:scale-105 hover:duration-150"
-          >
-            Register
-          </a>
+          <div className="flex flex-col items-center justify-center gap-y-2 gap-x-4 text-center text-xl font-semibold sm:flex-row">
+            <a
+              href="https://forms.gle/fRvdzhPejjmZ5yBC6"
+              target="_blank"
+              rel="noreferrer"
+              className="block w-full rounded bg-gradient-to-tr from-secondary-400 to-green-400 px-4 py-2 duration-300 hover:scale-105 hover:duration-150 sm:w-44"
+            >
+              Register
+            </a>
+            <a
+              href="https://discord.gg/t7ZJ7SpFce"
+              target="_blank"
+              rel="noreferrer"
+              className="flex w-full items-center justify-center gap-2 rounded px-4 py-2 outline outline-2 outline-offset-[-2px] outline-[#5865f2] duration-300 hover:scale-105 hover:bg-[#5865f2] hover:duration-150 sm:w-44"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418Z"
+                ></path>
+              </svg>
+              Join Discord
+            </a>
+          </div>
         </section>
         <section>
           <Faq />

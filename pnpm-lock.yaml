@@ -6,7 +6,6 @@ specifiers:
   '@types/react': 18.0.14
   '@types/react-dom': 18.0.5
   autoprefixer: ^10.4.7
-  email-validator: ^2.0.4
   eslint: 8.18.0
   eslint-config-next: 12.1.6
   firebase-admin: ^11.0.0
@@ -22,7 +21,6 @@ specifiers:
   typescript: 4.7.4
 
 dependencies:
-  email-validator: 2.0.4
   firebase-admin: 11.0.0
   next: 12.2.2_biqbaboplfbrettd7655fr4n2y
   next-seo: 5.4.0_7gpduzaz4csxytrukenoyuq3te
@@ -1051,11 +1049,6 @@ packages:
   /electron-to-chromium/1.4.170:
     resolution: {integrity: sha512-rZ8PZLhK4ORPjFqLp9aqC4/S1j4qWFsPPz13xmWdrbBkU/LlxMcok+f+6f8YnQ57MiZwKtOaW15biZZsY5Igvw==}
     dev: true
-
-  /email-validator/2.0.4:
-    resolution: {integrity: sha512-gYCwo7kh5S3IDyZPLZf6hSS0MnZT8QmJFqYvbqlDZSbwdZlY6QZWxJ4i/6UhITOJ4XzyI647Bm2MXKCLqnJ4nQ==}
-    engines: {node: '>4.0'}
-    dev: false
 
   /emoji-regex/8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}

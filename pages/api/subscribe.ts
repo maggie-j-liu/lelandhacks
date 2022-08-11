@@ -3,7 +3,6 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { db } from "../../lib/firebaseAdmin";
 import generateSignedUrl from "../../lib/generateSignedUrl";
 import { stripHtml } from "string-strip-html";
-import { validate } from "email-validator";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== "POST") {
@@ -23,10 +22,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   const { email, name } = req.body;
-  if (!validate(email)) {
-    res.status(400).send("Invalid email");
-    return;
-  }
 
   const existing = await db
     .collection("subscribers")
