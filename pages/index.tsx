@@ -75,7 +75,7 @@ export default function Home() {
               Register
             </a>
             <a
-              href="https://discord.gg/t7ZJ7SpFce"
+              href="https://discord.gg/2HCbDFs35V"
               target="_blank"
               rel="noreferrer"
               className="flex w-full items-center justify-center gap-2 rounded px-4 py-2 outline outline-2 outline-offset-[-2px] outline-[#5865f2] duration-300 hover:scale-105 hover:bg-[#5865f2] hover:duration-150 sm:w-44"
