@@ -60,7 +60,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   For now, please join our Discord server (<a href="https://discord.gg/t7ZJ7SpFce">https://discord.gg/t7ZJ7SpFce</a>) to connect with other attendees and get updates on the hackathon.
   And we also have a referral program -- invite your friends to register and tell them to put your name in the "How did you find out about Leland Hacks?" question.
   The participant who refers the most other participants will receive a prize!
-  <br />
+</div>
+<br />
+<div>
   If you have any questions, feel free to email us at team@lelandhacks.com.
   We look forward to seeing you at Leland Hacks! 
 </div>
