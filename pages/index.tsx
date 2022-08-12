@@ -8,6 +8,7 @@ import beaverworks from "../sponsors/beaverworks.png";
 import Prisma from "../sponsors/Prisma";
 import bay_area_kids_clubs from "../sponsors/bay_area_kids_clubs.png";
 import ottersec from "../sponsors/ottersec.png";
+import wolfram from "../sponsors/wolfram.png";
 
 export default function Home() {
   return (
@@ -163,6 +164,13 @@ export default function Home() {
                 className="h-full object-contain"
                 src={beaverworks}
                 alt="Beaver Works Logo"
+              />
+            </Sponsor>
+            <Sponsor small link="https://wolfram.com">
+              <Image
+                className="h-full object-contain"
+                src={wolfram}
+                alt="Wolfram Logo"
               />
             </Sponsor>
             <Sponsor small link="https://www.prisma.io">
