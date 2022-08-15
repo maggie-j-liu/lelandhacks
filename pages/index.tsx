@@ -9,6 +9,7 @@ import Prisma from "../sponsors/Prisma";
 import bay_area_kids_clubs from "../sponsors/bay_area_kids_clubs.png";
 import ottersec from "../sponsors/ottersec.png";
 import wolfram from "../sponsors/wolfram.png";
+import stickermule from "../sponsors/stickermule.png";
 
 export default function Home() {
   return (
@@ -171,6 +172,13 @@ export default function Home() {
                 className="h-full object-contain"
                 src={wolfram}
                 alt="Wolfram Logo"
+              />
+            </Sponsor>
+            <Sponsor small link="https://stickermule.com">
+              <Image
+                className="h-full object-contain"
+                src={stickermule}
+                alt="Sticker Mule logo"
               />
             </Sponsor>
             <Sponsor small link="https://www.prisma.io">
