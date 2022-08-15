@@ -1,6 +1,6 @@
 import Faq from "../components/Faq";
 import Lightning from "../components/Lightning";
-import sagacent from "../sponsors/sagacent.png";
+import sagacent from "../sponsors/sagacent.jpg";
 import Image from "next/future/image";
 import Sponsor from "../components/Sponsor";
 import mailchannels from "../sponsors/mailchannels.png";
