@@ -11,6 +11,7 @@ import ottersec from "../sponsors/ottersec.png";
 import wolfram from "../sponsors/wolfram.png";
 import stickermule from "../sponsors/stickermule.png";
 import lelandbridge from "../sponsors/lelandbridge.jpg";
+import sparks_academy from "../sponsors/sparks_academy.png";
 
 export default function Home() {
   return (
@@ -137,6 +138,13 @@ export default function Home() {
                 className="h-full object-contain"
                 src={mailchannels}
                 alt="MailChannels Logo"
+              />
+            </Sponsor>
+            <Sponsor link="https://sparksclassroom.com">
+              <Image
+                className="h-full object-contain"
+                src={sparks_academy}
+                alt="Sparks Academy Logo"
               />
             </Sponsor>
             <Sponsor link="https://www.lelandbridge.org">
