@@ -10,6 +10,7 @@ import bay_area_kids_clubs from "../sponsors/bay_area_kids_clubs.png";
 import ottersec from "../sponsors/ottersec.png";
 import wolfram from "../sponsors/wolfram.png";
 import stickermule from "../sponsors/stickermule.png";
+import lelandbridge from "../sponsors/lelandbridge.jpg";
 
 export default function Home() {
   return (
@@ -136,6 +137,13 @@ export default function Home() {
                 className="h-full object-contain"
                 src={mailchannels}
                 alt="MailChannels Logo"
+              />
+            </Sponsor>
+            <Sponsor link="https://www.lelandbridge.org">
+              <Image
+                className="h-full object-contain"
+                src={lelandbridge}
+                alt="Leland Bridge Logo"
               />
             </Sponsor>
             <Sponsor /* link="https://bayareakidsclub.com" */>
