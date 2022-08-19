@@ -12,6 +12,7 @@ import wolfram from "../sponsors/wolfram.png";
 import stickermule from "../sponsors/stickermule.png";
 import lelandbridge from "../sponsors/lelandbridge.jpg";
 import sparks_academy from "../sponsors/sparks_academy.png";
+import bank_grant from "../sponsors/bank_grant.png";
 
 export default function Home() {
   return (
@@ -133,18 +134,18 @@ export default function Home() {
                 alt="Sagacent Technologies Logo"
               />
             </Sponsor>
-            <Sponsor link="https://mailchannels.com">
-              <Image
-                className="h-full object-contain"
-                src={mailchannels}
-                alt="MailChannels Logo"
-              />
-            </Sponsor>
             <Sponsor link="https://sparksclassroom.com">
               <Image
                 className="h-full object-contain"
                 src={sparks_academy}
                 alt="Sparks Academy Logo"
+              />
+            </Sponsor>
+            <Sponsor link="https://mailchannels.com">
+              <Image
+                className="h-full object-contain"
+                src={mailchannels}
+                alt="MailChannels Logo"
               />
             </Sponsor>
             <Sponsor link="https://www.lelandbridge.org">
@@ -171,6 +172,16 @@ export default function Home() {
           </div>
           <h3 className="mt-6">With support from</h3>
           <div className="mt-1 grid grid-cols-1 gap-4 text-black sm:grid-cols-3">
+            <Sponsor
+              small
+              link="https://bank.hackclub.com/hackathon-grant-fund"
+            >
+              <Image
+                className="h-full object-contain"
+                src={bank_grant}
+                alt="Hack Club and FIRST Logos"
+              />
+            </Sponsor>
             <Sponsor small link="https://www.pandemonium.capital">
               <div className="text-base font-semibold">
                 💥 Pandemonium Capital 💥
