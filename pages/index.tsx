@@ -13,6 +13,7 @@ import stickermule from "../sponsors/stickermule.png";
 import lelandbridge from "../sponsors/lelandbridge.jpg";
 import sparks_academy from "../sponsors/sparks_academy.png";
 import bank_grant from "../sponsors/bank_grant.png";
+import ThreeBlueOneBrown from "../sponsors/ThreeBlueOneBrown";
 
 export default function Home() {
   return (
@@ -140,6 +141,9 @@ export default function Home() {
                 src={sparks_academy}
                 alt="Sparks Academy Logo"
               />
+            </Sponsor>
+            <Sponsor link="https://3blue1brown.com">
+              <ThreeBlueOneBrown />
             </Sponsor>
             <Sponsor link="https://mailchannels.com">
               <Image
