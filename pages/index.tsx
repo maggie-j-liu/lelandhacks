@@ -14,6 +14,7 @@ import lelandbridge from "../sponsors/lelandbridge.jpg";
 import sparks_academy from "../sponsors/sparks_academy.png";
 import bank_grant from "../sponsors/bank_grant.png";
 import ThreeBlueOneBrown from "../sponsors/ThreeBlueOneBrown";
+import Coil from "../sponsors/Coil";
 
 export default function Home() {
   return (
@@ -134,6 +135,9 @@ export default function Home() {
                 src={sagacent}
                 alt="Sagacent Technologies Logo"
               />
+            </Sponsor>
+            <Sponsor link="https://coil.com">
+              <Coil />
             </Sponsor>
             <Sponsor link="https://sparksclassroom.com">
               <Image
