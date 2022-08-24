@@ -16,12 +16,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     return;
   }
 
-  if (!req.body?.email || !req.body?.name) {
+  if (!req.body?.email || !req.body?.first_name || !req.body?.last_name) {
     res.status(400).send("Email and name are required");
     return;
   }
 
-  const { email, name } = req.body;
+  const { email, first_name, last_name } = req.body;
 
   const existing = await db
     .collection("subscribers")
@@ -32,24 +32,33 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const snapshot = existing.docs[0];
     const data = snapshot.data();
     console.log(data);
-    res.status(200).send("You are already subscribed");
-    return;
+    if ("subscribedAt" in data) {
+      res.status(200).send("You are already subscribed");
+      return;
+    }
+    await db.collection("subscribers").doc(snapshot.id).update({
+      first_name,
+      last_name,
+      subscribedAt: FieldValue.serverTimestamp(),
+    });
+  } else {
+    await db.collection("subscribers").doc().set({
+      first_name,
+      last_name,
+      email,
+      subscribedAt: FieldValue.serverTimestamp(),
+    });
   }
 
-  await db.collection("subscribers").doc().set({
-    email,
-    subscribedAt: FieldValue.serverTimestamp(),
-  });
+  // if (!process.env.DOMAIN) {
+  //   throw new Error("DOMAIN environment variable is not set");
+  // }
+  // const baseUnsubscribeUrl = new URL(process.env.DOMAIN);
+  // baseUnsubscribeUrl.pathname = "unsubscribe";
+  // baseUnsubscribeUrl.searchParams.set("email", email);
 
-  if (!process.env.DOMAIN) {
-    throw new Error("DOMAIN environment variable is not set");
-  }
-  const baseUnsubscribeUrl = new URL(process.env.DOMAIN);
-  baseUnsubscribeUrl.pathname = "unsubscribe";
-  baseUnsubscribeUrl.searchParams.set("email", email);
-
-  const signedUrl = generateSignedUrl(baseUnsubscribeUrl);
-  const htmlMessage = `<div>Hey ${name}!</div>
+  // const signedUrl = generateSignedUrl(baseUnsubscribeUrl);
+  const htmlMessage = `<div>Hey ${first_name}!</div>
 <br />
 <div>
   Thank you for registering for
