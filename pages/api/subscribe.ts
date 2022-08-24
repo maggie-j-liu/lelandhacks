@@ -47,6 +47,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       lastName,
       email,
       subscribedAt: FieldValue.serverTimestamp(),
+      waiverSigned: false,
     });
   }
 
