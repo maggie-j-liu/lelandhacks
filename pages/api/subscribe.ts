@@ -16,12 +16,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     return;
   }
 
-  if (!req.body?.email || !req.body?.first_name || !req.body?.last_name) {
+  if (!req.body?.email || !req.body?.firstName || !req.body?.lastName) {
     res.status(400).send("Email and name are required");
     return;
   }
 
-  const { email, first_name, last_name } = req.body;
+  const { email, firstName, lastName } = req.body;
 
   const existing = await db
     .collection("subscribers")
@@ -37,14 +37,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       return;
     }
     await db.collection("subscribers").doc(snapshot.id).update({
-      first_name,
-      last_name,
+      firstName,
+      lastName,
       subscribedAt: FieldValue.serverTimestamp(),
     });
   } else {
     await db.collection("subscribers").doc().set({
-      first_name,
-      last_name,
+      firstName,
+      lastName,
       email,
       subscribedAt: FieldValue.serverTimestamp(),
     });
@@ -58,7 +58,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   // baseUnsubscribeUrl.searchParams.set("email", email);
 
   // const signedUrl = generateSignedUrl(baseUnsubscribeUrl);
-  const htmlMessage = `<div>Hey ${first_name}!</div>
+  const htmlMessage = `<div>Hey ${firstName}!</div>
 <br />
 <div>
   Thank you for registering for
