@@ -29,6 +29,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     .limit(1)
     .get();
   if (!existing.empty) {
+    const snapshot = existing.docs[0];
+    const data = snapshot.data();
+    console.log(data);
     res.status(200).send("You are already subscribed");
     return;
   }
