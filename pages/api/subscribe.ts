@@ -65,7 +65,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   Thank you for registering for
   <a href="https://lelandhacks.com">Leland Hacks</a>!
   The hackathon will be held on Sunday September 18th, at the <a href="https://goo.gl/maps/wY6vCBqyEanwznf68">Vineland Branch Library</a>.
-  For now, please join our Discord server (<a href="https://discord.gg/t7ZJ7SpFce">https://discord.gg/t7ZJ7SpFce</a>) to connect with other attendees and get updates on the hackathon.
+  You'll also need to fill out this <b>mandatory</b> waiver: https://forms.gle/kYC6MqJ8z9SB5s787 to participate in the hackathon.
+  You can also join our Discord server (<a href="https://discord.gg/t7ZJ7SpFce">https://discord.gg/t7ZJ7SpFce</a>) to connect with other attendees and get updates!
+</div>
+<br />
+<div>
   And we also have a referral program -- invite your friends to register and tell them to put your name in the "How did you find out about Leland Hacks?" question.
   The participant who refers the most other participants will receive a prize!
 </div>

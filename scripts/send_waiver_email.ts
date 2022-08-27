@@ -4,21 +4,7 @@ import { stripHtml } from "string-strip-html";
 
 const devMode = false;
 
-(async () => {
-  let query;
-  if (devMode) {
-    query = await db
-      .collection("subscribers")
-      .where("email", "==", "maggie.j.liu@gmail.com")
-      .get();
-  } else {
-    query = await db
-      .collection("subscribers")
-      .where("waiverSigned", "==", false)
-      .get();
-  }
-  const emailAddresses = [];
-  const htmlMessage = `<div>Hey hacker!</div>
+const htmlMessage = `<div>Hey hacker!</div>
 <br />
 <div>
   Thanks again for registering for
@@ -34,20 +20,17 @@ const devMode = false;
 <div>Happy hacking!</div>
 <div>Leland Hacks Team</div>
 `;
-  const textMessage = stripHtml(htmlMessage, {
-    dumpLinkHrefsNearby: {
-      enabled: true,
-      putOnNewLine: false,
-      wrapHeads: "<",
-      wrapTails: ">",
-    },
-  }).result;
-  for (const doc of query.docs) {
-    const data = doc.data();
-    console.log(data.email);
-    emailAddresses.push(data.email);
-  }
-  console.log("emailing", emailAddresses);
+const textMessage = stripHtml(htmlMessage, {
+  dumpLinkHrefsNearby: {
+    enabled: true,
+    putOnNewLine: false,
+    wrapHeads: "<",
+    wrapTails: ">",
+  },
+}).result;
+
+const sendEmail = async (addresses: string[]) => {
+  console.log("emailing", addresses);
   await fetch("https://mailinglist.lelandcs.workers.dev/sendEmail", {
     method: "POST",
     headers: {
@@ -55,7 +38,7 @@ const devMode = false;
       authorization: "Bearer " + process.env.MAILINGLIST_AUTH_TOKEN,
     },
     body: JSON.stringify({
-      email: emailAddresses,
+      email: addresses,
       htmlMessage,
       textMessage,
       subject: `${
@@ -63,4 +46,28 @@ const devMode = false;
       }Leland Hacks Waiver -- Please Sign`,
     }),
   });
+};
+
+(async () => {
+  let query;
+  if (devMode) {
+    query = await db
+      .collection("subscribers")
+      .where("email", "==", "maggie.j.liu@gmail.com")
+      .get();
+  } else {
+    query = await db
+      .collection("subscribers")
+      .where("waiverSigned", "==", false)
+      .get();
+  }
+  let emailAddresses = [];
+
+  for (const doc of query.docs) {
+    const data = doc.data();
+    emailAddresses.push(data.email);
+  }
+  if (emailAddresses.length > 0) {
+    sendEmail(emailAddresses);
+  }
 })();
