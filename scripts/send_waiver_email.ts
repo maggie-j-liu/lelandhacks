@@ -24,7 +24,7 @@ const devMode = false;
   Thanks again for registering for
   <a href="https://lelandhacks.com">Leland Hacks</a>; we're excited to see you there!
   To participate in the hackathon, you'll need to sign a <b>mandatory</b> event liability waiver.
-  Please print out the <a href="https://lelandhacks.com/waiver.pdf">waiver</a>, sign it (have your parent sign it if you are under 18), and submit a picture to this form: https://forms.gle/kYC6MqJ8z9SB5s787.
+  Please print out the <a href="https://lelandhacks.com/waiver.pdf">waiver</a>, sign it (have your parent sign it if you are under 18), and submit a picture or scan to this form: https://forms.gle/kYC6MqJ8z9SB5s787.
 </div>
 <br />
 <div>
