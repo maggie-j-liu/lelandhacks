@@ -15,6 +15,8 @@ import sparks_academy from "../sponsors/sparks_academy.png";
 import bank_grant from "../sponsors/bank_grant.png";
 import ThreeBlueOneBrown from "../sponsors/ThreeBlueOneBrown";
 import Coil from "../sponsors/Coil";
+import Figma from "../sponsors/Figma";
+import easyfuncoding from "../sponsors/easyfuncoding.jpg";
 
 export default function Home() {
   return (
@@ -170,6 +172,13 @@ export default function Home() {
                 alt="Bay Area Kids Clubs Logo"
               />
             </Sponsor>
+            <Sponsor link="https://easyfuncoding.com">
+              <Image
+                className="h-full object-contain"
+                src={easyfuncoding}
+                alt="EasyFunCoding Logo"
+              />
+            </Sponsor>
             <Sponsor link="https://osec.io">
               <Image
                 className="h-full object-contain invert"
@@ -201,6 +210,9 @@ export default function Home() {
                 src={beaverworks}
                 alt="Beaver Works Logo"
               />
+            </Sponsor>
+            <Sponsor small link="https://figma.com">
+              <Figma />
             </Sponsor>
             <Sponsor small link="https://wolfram.com">
               <Image
