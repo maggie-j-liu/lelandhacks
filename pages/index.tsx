@@ -17,6 +17,7 @@ import ThreeBlueOneBrown from "../sponsors/ThreeBlueOneBrown";
 import Coil from "../sponsors/Coil";
 import Figma from "../sponsors/Figma";
 import easyfuncoding from "../sponsors/easyfuncoding.jpg";
+import Vercel from "../sponsors/Vercel";
 
 export default function Home() {
   return (
@@ -131,6 +132,11 @@ export default function Home() {
             View Sponsorship Prospectus
           </a>
           <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <Sponsor link="https://vercel.com">
+              <div className="h-full w-full px-8">
+                <Vercel />
+              </div>
+            </Sponsor>
             <Sponsor link="https://www.sagacent.com">
               <Image
                 className="h-full object-contain"
