@@ -205,7 +205,7 @@ const Schedule = ({ fullScreen = true }: { fullScreen?: boolean }) => {
           {Array.from({ length: end - start + 1 }, (_, i) => {
             const hour24 = start + i;
             const hour12 = hour24 > 12 ? hour24 - 12 : hour24;
-            const ampm = hour24 > 12 ? "pm" : "am";
+            const ampm = hour24 >= 12 ? "pm" : "am";
             return (
               <Fragment key={hour24}>
                 <li className="flex items-center gap-3 sm:gap-6">
