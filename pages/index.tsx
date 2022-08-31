@@ -18,6 +18,7 @@ import Coil from "../sponsors/Coil";
 import Figma from "../sponsors/Figma";
 import easyfuncoding from "../sponsors/easyfuncoding.jpg";
 import Vercel from "../sponsors/Vercel";
+import Schedule from "../components/Schedule";
 
 export default function Home() {
   return (
@@ -105,6 +106,9 @@ export default function Home() {
               Join Discord
             </a>
           </div>
+        </section>
+        <section>
+          <Schedule fullScreen={false} />
         </section>
         <section>
           <Faq />
