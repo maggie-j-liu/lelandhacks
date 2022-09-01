@@ -58,7 +58,7 @@ const data: EventOrArrayOfEvents[] = [
   {
     name: "🍕 Lunch",
     start: "13:00",
-    end: "14:00",
+    end: "13:30",
     tag: "food",
   },
   {
@@ -88,12 +88,12 @@ const data: EventOrArrayOfEvents[] = [
   {
     name: "👾 Game Tournament (Game TBD)",
     start: "17:30",
-    end: "18:00",
+    end: "18:30",
     tag: "event",
   },
   {
     name: "🥪 Dinner",
-    start: "18:00",
+    start: "18:30",
     end: "19:00",
     tag: "food",
   },
@@ -158,11 +158,6 @@ const EventCard = ({ event }: { event: Event | Event[] }) => {
           key={i}
           style={{ width: `${100 / numEvents}%` }}
         >
-          {/* {e.tag === "workshop"
-            ? "Workshop: "
-            : e.tag === "event"
-            ? "Event: "
-            : ""} */}
           {e.name}
           {e.tag === "workshop" ? (
             <span className="absolute right-2 bottom-2 hidden rounded-full bg-primary-300 px-2 py-0.5 text-sm font-semibold text-primary-700 group-hover:block sm:block">
