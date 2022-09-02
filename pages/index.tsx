@@ -19,6 +19,7 @@ import Figma from "../sponsors/Figma";
 import easyfuncoding from "../sponsors/easyfuncoding.jpg";
 import Vercel from "../sponsors/Vercel";
 import Schedule from "../components/Schedule";
+import digipen from "../sponsors/digipen.png";
 
 export default function Home() {
   return (
@@ -173,6 +174,13 @@ export default function Home() {
                 className="h-full object-contain"
                 src={lelandbridge}
                 alt="Leland Bridge Logo"
+              />
+            </Sponsor>
+            <Sponsor link="https://digipen.edu">
+              <Image
+                className="h-full object-contain"
+                src={digipen}
+                alt="DigiPen Logo"
               />
             </Sponsor>
             <Sponsor /* link="https://bayareakidsclub.com" */>
