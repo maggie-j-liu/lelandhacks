@@ -1,7 +1,6 @@
 import { FieldValue } from "firebase-admin/firestore";
 import { NextApiRequest, NextApiResponse } from "next";
 import { db } from "../../lib/firebaseAdmin";
-import generateSignedUrl from "../../lib/generateSignedUrl";
 import { stripHtml } from "string-strip-html";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -36,19 +35,40 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       res.status(200).send("You are already subscribed");
       return;
     }
-    await db.collection("subscribers").doc(snapshot.id).update({
-      firstName,
-      lastName,
-      subscribedAt: FieldValue.serverTimestamp(),
-    });
+    if (req.body.waitlist) {
+      await db.collection("subscribers").doc(snapshot.id).update({
+        firstName,
+        lastName,
+        subscribedAt: FieldValue.serverTimestamp(),
+        waiverSigned: true,
+        waitlist: true,
+      });
+    } else {
+      await db.collection("subscribers").doc(snapshot.id).update({
+        firstName,
+        lastName,
+        subscribedAt: FieldValue.serverTimestamp(),
+      });
+    }
   } else {
-    await db.collection("subscribers").doc().set({
-      firstName,
-      lastName,
-      email,
-      subscribedAt: FieldValue.serverTimestamp(),
-      waiverSigned: false,
-    });
+    if (req.body.waitlist) {
+      await db.collection("subscribers").doc().set({
+        firstName,
+        lastName,
+        email,
+        subscribedAt: FieldValue.serverTimestamp(),
+        waiverSigned: true,
+        waitlist: true,
+      });
+    } else {
+      await db.collection("subscribers").doc().set({
+        firstName,
+        lastName,
+        email,
+        subscribedAt: FieldValue.serverTimestamp(),
+        waiverSigned: false,
+      });
+    }
   }
 
   // if (!process.env.DOMAIN) {
@@ -59,7 +79,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   // baseUnsubscribeUrl.searchParams.set("email", email);
 
   // const signedUrl = generateSignedUrl(baseUnsubscribeUrl);
-  const htmlMessage = `<div>Hey ${firstName}!</div>
+  const htmlMessage = req.body.waitlist
+    ? `<div>Hey ${firstName}!</div>
 <br />
 <div>
   Thank you for registering for
@@ -77,6 +98,20 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 <div>
   If you have any questions, feel free to email us at team@lelandhacks.com.
   We look forward to seeing you at Leland Hacks! 
+</div>
+<br />
+<div>Happy hacking!</div>
+<div>Leland Hacks Team</div>
+`
+    : `<div>Hey ${firstName}!</div>
+<br />
+<div>
+  Thank you for signing up for the <a href="https://lelandhacks.com">Leland Hacks</a> waitlist!
+  If spots open up, we'll notify you a few days before the event.
+</div>
+<br />
+<div>
+  If you have any questions, feel free to email us at team@lelandhacks.com.
 </div>
 <br />
 <div>Happy hacking!</div>
