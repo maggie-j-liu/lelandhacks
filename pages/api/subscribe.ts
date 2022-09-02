@@ -83,6 +83,20 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     ? `<div>Hey ${firstName}!</div>
 <br />
 <div>
+  Thank you for signing up for the <a href="https://lelandhacks.com">Leland Hacks</a> waitlist!
+  If spots open up, we'll notify you a few days before the event.
+</div>
+<br />
+<div>
+  If you have any questions, feel free to email us at team@lelandhacks.com.
+</div>
+<br />
+<div>Happy hacking!</div>
+<div>Leland Hacks Team</div>
+`
+    : `<div>Hey ${firstName}!</div>
+<br />
+<div>
   Thank you for registering for
   <a href="https://lelandhacks.com">Leland Hacks</a>!
   The hackathon will be held on Sunday September 18th, at the <a href="https://goo.gl/maps/wY6vCBqyEanwznf68">Vineland Branch Library</a>.
@@ -98,20 +112,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 <div>
   If you have any questions, feel free to email us at team@lelandhacks.com.
   We look forward to seeing you at Leland Hacks! 
-</div>
-<br />
-<div>Happy hacking!</div>
-<div>Leland Hacks Team</div>
-`
-    : `<div>Hey ${firstName}!</div>
-<br />
-<div>
-  Thank you for signing up for the <a href="https://lelandhacks.com">Leland Hacks</a> waitlist!
-  If spots open up, we'll notify you a few days before the event.
-</div>
-<br />
-<div>
-  If you have any questions, feel free to email us at team@lelandhacks.com.
 </div>
 <br />
 <div>Happy hacking!</div>
