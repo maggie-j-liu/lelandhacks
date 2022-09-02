@@ -88,7 +88,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 </div>
 <br />
 <div>
-  If you have any questions, feel free to email us at team@lelandhacks.com.
+  Feel free to email us at team@lelandhacks.com with any questions.
 </div>
 <br />
 <div>Happy hacking!</div>
