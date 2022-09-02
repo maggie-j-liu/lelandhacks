@@ -117,6 +117,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 <div>Happy hacking!</div>
 <div>Leland Hacks Team</div>
 `;
+  const registerSubject = `${
+    process.env.NODE_ENV === "development" ? "[Testing] " : ""
+  }Thank You for Registering for Leland Hacks ⚡`;
+  const waitlistSubject = `${
+    process.env.NODE_ENV === "development" ? "[Testing] " : ""
+  }Leland Hacks Waitlist Registration`;
 
   const textMessage = stripHtml(htmlMessage, {
     dumpLinkHrefsNearby: {
@@ -143,9 +149,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         email,
         htmlMessage,
         textMessage,
-        subject: `${
-          process.env.NODE_ENV === "development" ? "[Testing] " : ""
-        }Thank You for Registering for Leland Hacks ⚡`,
+        subject: req.body.waitlist ? waitlistSubject : registerSubject,
       }),
     }
   );
