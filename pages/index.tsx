@@ -20,6 +20,7 @@ import easyfuncoding from "../sponsors/easyfuncoding.jpg";
 import Vercel from "../sponsors/Vercel";
 import Schedule from "../components/Schedule";
 import digipen from "../sponsors/digipen.png";
+import Postman from "../sponsors/Postman";
 
 export default function Home() {
   return (
@@ -151,6 +152,9 @@ export default function Home() {
             </Sponsor>
             <Sponsor link="https://coil.com">
               <Coil />
+            </Sponsor>
+            <Sponsor link="https://postman.com">
+              <Postman />
             </Sponsor>
             <Sponsor link="https://sparksclassroom.com">
               <Image
