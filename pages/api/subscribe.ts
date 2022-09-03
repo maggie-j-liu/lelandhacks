@@ -48,6 +48,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         firstName,
         lastName,
         subscribedAt: FieldValue.serverTimestamp(),
+        waitlist: false,
       });
     }
   } else {
@@ -67,6 +68,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         email,
         subscribedAt: FieldValue.serverTimestamp(),
         waiverSigned: false,
+        waitlist: false,
       });
     }
   }
