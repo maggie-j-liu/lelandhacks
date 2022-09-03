@@ -79,12 +79,12 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center justify-center gap-y-2 gap-x-4 text-center text-xl font-semibold sm:flex-row">
             <a
-              href="https://forms.gle/fRvdzhPejjmZ5yBC6"
+              href="https://forms.gle/yhHKDeXijYn6NuVi8"
               target="_blank"
               rel="noreferrer"
               className="block w-full rounded bg-gradient-to-tr from-secondary-400 to-green-400 px-4 py-2 duration-300 hover:scale-105 hover:duration-150 sm:w-44"
             >
-              Register
+              Join Waitlist
             </a>
             <a
               href="https://discord.gg/2HCbDFs35V"

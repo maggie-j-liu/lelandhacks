@@ -47,8 +47,8 @@ const Faq = () => {
         <Q>Who can participate in Leland Hacks?</Q>
         <A>
           All high school and middle school students are welcome to attend. Fill
-          out <Link href="https://forms.gle/fRvdzhPejjmZ5yBC6">this form</Link>{" "}
-          to register!
+          out <Link href="https://forms.gle/yhHKDeXijYn6NuVi8">this form</Link>{" "}
+          to sign up for our waitlist!
         </A>
         <Q>Do I need to know how to code?</Q>
         <A>
