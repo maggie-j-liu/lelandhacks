@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 const PrizeCard = ({
   title,
   description,
@@ -20,12 +22,12 @@ const PrizeCard = ({
         ) : null}
         <div className="mt-6 flex flex-col text-center leading-none">
           {prizes.map((prize, i) => (
-            <>
+            <Fragment key={i}>
               <div>{prize}</div>
               {i !== prizes.length - 1 ? (
                 <div className="text-base text-gray-400">+</div>
               ) : null}
-            </>
+            </Fragment>
           ))}
         </div>
       </div>

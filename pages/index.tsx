@@ -22,6 +22,7 @@ import Schedule from "../components/Schedule";
 import digipen from "../sponsors/digipen.png";
 import Postman from "../sponsors/Postman";
 import Prizes from "../components/Prizes";
+import XCamp from "../sponsors/XCamp";
 
 export default function Home() {
   return (
@@ -160,6 +161,9 @@ export default function Home() {
             <Sponsor link="https://postman.com">
               <Postman />
             </Sponsor>
+            <Sponsor link="https://x-camp.academy">
+              <XCamp />
+            </Sponsor>
             <Sponsor link="https://sparksclassroom.com">
               <Image
                 className="h-full object-contain"
@@ -191,18 +195,18 @@ export default function Home() {
                 alt="DigiPen Logo"
               />
             </Sponsor>
-            <Sponsor /* link="https://bayareakidsclub.com" */>
-              <Image
-                className="h-full object-contain"
-                src={bay_area_kids_clubs}
-                alt="Bay Area Kids Clubs Logo"
-              />
-            </Sponsor>
             <Sponsor link="https://easyfuncoding.com">
               <Image
                 className="h-full object-contain"
                 src={easyfuncoding}
                 alt="EasyFunCoding Logo"
+              />
+            </Sponsor>
+            <Sponsor /* link="https://bayareakidsclub.com" */>
+              <Image
+                className="h-full object-contain"
+                src={bay_area_kids_clubs}
+                alt="Bay Area Kids Clubs Logo"
               />
             </Sponsor>
             <Sponsor link="https://osec.io">
