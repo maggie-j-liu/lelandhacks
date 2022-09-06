@@ -62,7 +62,7 @@ const data: EventOrArrayOfEvents[] = [
     tag: "food",
   },
   {
-    name: "🐝 Python and JavaScript Bee",
+    name: "🐝 Python/JavaScript Bee",
     start: "14:00",
     end: "15:00",
     tag: "event",

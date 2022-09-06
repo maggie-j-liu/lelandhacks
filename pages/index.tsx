@@ -21,6 +21,7 @@ import Vercel from "../sponsors/Vercel";
 import Schedule from "../components/Schedule";
 import digipen from "../sponsors/digipen.png";
 import Postman from "../sponsors/Postman";
+import Prizes from "../components/Prizes";
 
 export default function Home() {
   return (
@@ -111,6 +112,9 @@ export default function Home() {
         </section>
         <section>
           <Schedule fullScreen={false} />
+        </section>
+        <section>
+          <Prizes />
         </section>
         <section>
           <Faq />
