@@ -23,6 +23,7 @@ import digipen from "../sponsors/digipen.png";
 import Postman from "../sponsors/Postman";
 import Prizes from "../components/Prizes";
 import XCamp from "../sponsors/XCamp";
+import tfhe from "../sponsors/tfhe.png";
 
 export default function Home() {
   return (
@@ -160,6 +161,13 @@ export default function Home() {
             </Sponsor>
             <Sponsor link="https://postman.com">
               <Postman />
+            </Sponsor>
+            <Sponsor link="https://tfhe.org">
+              <Image
+                className="h-full object-contain"
+                src={tfhe}
+                alt="The Foundation for Hispanic Education Logo"
+              />
             </Sponsor>
             <Sponsor link="https://x-camp.academy">
               <XCamp />
