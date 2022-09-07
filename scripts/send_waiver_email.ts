@@ -44,6 +44,7 @@ const sendEmail = async (addresses: string[]) => {
       subject: `${
         devMode ? "[Testing] " : ""
       }Leland Hacks Waiver -- Please Sign`,
+      bccTeam: true,
     }),
   });
 };

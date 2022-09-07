@@ -152,6 +152,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         htmlMessage,
         textMessage,
         subject: req.body.waitlist ? waitlistSubject : registerSubject,
+        bccTeam: true,
       }),
     }
   );
