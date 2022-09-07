@@ -173,7 +173,7 @@ const EventCard = ({ event }: { event: Event | Event[] }) => {
 const Schedule = ({ fullScreen = true }: { fullScreen?: boolean }) => {
   return (
     <>
-      <h2 className="text-3xl font-bold">
+      <h2 className="text-3xl font-bold" id="schedule">
         Schedule (Tentative){" "}
         {!fullScreen ? (
           <a

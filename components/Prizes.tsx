@@ -40,7 +40,9 @@ const PrizeCard = ({
 const Prizes = () => {
   return (
     <div>
-      <h2 className="text-3xl font-bold">Prizes</h2>
+      <h2 className="text-3xl font-bold" id="prizes">
+        Prizes
+      </h2>
       <div className="grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2">
         <PrizeCard
           emoji="🥇"
