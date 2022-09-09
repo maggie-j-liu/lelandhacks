@@ -24,6 +24,8 @@ import Postman from "../sponsors/Postman";
 import Prizes from "../components/Prizes";
 import XCamp from "../sponsors/XCamp";
 import tfhe from "../sponsors/tfhe.png";
+import alphastar from "../sponsors/alphastar.png";
+import Deno from "../sponsors/Deno";
 
 export default function Home() {
   return (
@@ -189,6 +191,13 @@ export default function Home() {
                 alt="MailChannels Logo"
               />
             </Sponsor>
+            <Sponsor link="https://alphastar.academy">
+              <Image
+                className="h-full object-contain"
+                src={alphastar}
+                alt="AlphaStar Academy Logo"
+              />
+            </Sponsor>
             <Sponsor link="https://www.lelandbridge.org">
               <Image
                 className="h-full object-contain"
@@ -241,6 +250,9 @@ export default function Home() {
               <div className="text-base font-semibold">
                 💥 Pandemonium Capital 💥
               </div>
+            </Sponsor>
+            <Sponsor small link="https://deno.land">
+              <Deno />
             </Sponsor>
             <Sponsor small link="https://beaverworks.ll.mit.edu">
               <Image
