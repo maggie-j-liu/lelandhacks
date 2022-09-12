@@ -223,7 +223,7 @@ export default function Home() {
                 alt="EasyFunCoding Logo"
               />
             </Sponsor>
-            <Sponsor /* link="https://bayareakidsclub.com" */>
+            <Sponsor link="https://bayareakidsclub.com">
               <Image
                 className="h-full object-contain"
                 src={bay_area_kids_clubs}
