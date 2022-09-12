@@ -26,6 +26,7 @@ import XCamp from "../sponsors/XCamp";
 import tfhe from "../sponsors/tfhe.png";
 import alphastar from "../sponsors/alphastar.png";
 import Deno from "../sponsors/Deno";
+import Astro from "../sponsors/Astro";
 
 export default function Home() {
   return (
@@ -197,6 +198,9 @@ export default function Home() {
                 src={alphastar}
                 alt="AlphaStar Academy Logo"
               />
+            </Sponsor>
+            <Sponsor link="https://astro.build">
+              <Astro />
             </Sponsor>
             <Sponsor link="https://www.lelandbridge.org">
               <Image
