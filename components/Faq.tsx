@@ -45,11 +45,7 @@ const Faq = () => {
           prizes, and there'll be swag and food for everyone!
         </A>
         <Q>Who can participate in Leland Hacks?</Q>
-        <A>
-          All high school and middle school students are welcome to attend. Fill
-          out <Link href="https://forms.gle/yhHKDeXijYn6NuVi8">this form</Link>{" "}
-          to sign up for our waitlist!
-        </A>
+        <A>All high school and middle school students are welcome to attend.</A>
         <Q>Do I need to know how to code?</Q>
         <A>
           Nope! We welcome all students to participate, regardless of
