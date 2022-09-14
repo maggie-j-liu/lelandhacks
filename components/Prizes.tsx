@@ -50,6 +50,7 @@ const Prizes = () => {
           prizes={[
             "💸 $75 Amazon Gift Card",
             "🥧 Raspberry Pi",
+            "▲ Vercel Hat",
             "🐺 One year subscription to Wolfram|One Personal Edition and Wolfram|Alpha Pro",
           ]}
         />
@@ -59,29 +60,42 @@ const Prizes = () => {
           prizes={[
             "💸 $60 Amazon Gift Card",
             "👕 Prisma T-shirt",
+            "▲ Vercel Hat",
             "🐺 One year subscription to Wolfram|One Personal Edition and Wolfram|Alpha Pro",
           ]}
         />
         <PrizeCard
           emoji="🥉"
           title="3rd Place"
-          prizes={["💸 $45 Amazon Gift Card"]}
+          prizes={["💸 $45 Amazon Gift Card", "▲ Vercel Hat"]}
         />
         <PrizeCard
           emoji="🏆"
           title="Best Beginner Project"
           description="A beginner team is one where at least half the team members have never attended a hackathon before."
-          prizes={["💸 $20 Amazon Gift Card", "🐱 Squishmallow"]}
+          prizes={[
+            "💸 $20 Amazon Gift Card",
+            "🐱 Squishmallow",
+            "▲ Vercel Hat",
+          ]}
         />
         <PrizeCard
           emoji="✨"
           title="Best Design"
-          prizes={["💸 $20 Amazon Gift Card", "✨ Figma T-shirt"]}
+          prizes={[
+            "💸 $20 Amazon Gift Card",
+            "✨ Figma T-shirt",
+            "▲ Vercel Hat",
+          ]}
         />
         <PrizeCard
           emoji="🤣"
           title="Most Meme Project"
-          prizes={["💸 $20 Amazon Gift Card", "🦕 Orpheus Plushie"]}
+          prizes={[
+            "💸 $20 Amazon Gift Card",
+            "🦕 Orpheus Plushie",
+            "▲ Vercel Hat",
+          ]}
         />
         <PrizeCard
           emoji="💖"
