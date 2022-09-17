@@ -27,6 +27,7 @@ import tfhe from "../sponsors/tfhe.png";
 import alphastar from "../sponsors/alphastar.png";
 import Deno from "../sponsors/Deno";
 import Astro from "../sponsors/Astro";
+import ModPizza from "../sponsors/ModPizza";
 
 export default function Home() {
   return (
@@ -241,6 +242,9 @@ export default function Home() {
                 src={bank_grant}
                 alt="Hack Club and FIRST Logos"
               />
+            </Sponsor>
+            <Sponsor small link="https://modpizza.com">
+              <ModPizza />
             </Sponsor>
             <Sponsor small link="https://www.pandemonium.capital">
               <div className="text-base font-semibold">
