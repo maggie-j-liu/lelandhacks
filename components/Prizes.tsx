@@ -52,6 +52,7 @@ const Prizes = () => {
             "🥧 Raspberry Pi",
             "▲ Vercel Hat",
             "🐺 One year subscription to Wolfram|One Personal Edition and Wolfram|Alpha Pro",
+            "🐮 2 X-Camp Level Enhancement Classes",
           ]}
         />
         <PrizeCard
@@ -62,12 +63,17 @@ const Prizes = () => {
             "👕 Prisma T-shirt",
             "▲ Vercel Hat",
             "🐺 One year subscription to Wolfram|One Personal Edition and Wolfram|Alpha Pro",
+            "🐮 1 X-Camp Level Enhancement Class",
           ]}
         />
         <PrizeCard
           emoji="🥉"
           title="3rd Place"
-          prizes={["💸 $45 Amazon Gift Card", "▲ Vercel Hat"]}
+          prizes={[
+            "💸 $45 Amazon Gift Card",
+            "▲ Vercel Hat",
+            "🐮 1 X-Camp Level Enhancement Class",
+          ]}
         />
         <PrizeCard
           emoji="🏆"
@@ -77,6 +83,7 @@ const Prizes = () => {
             "💸 $20 Amazon Gift Card",
             "🐱 Squishmallow",
             "▲ Vercel Hat",
+            "🐮 Discount on any X-Camp USACO Class",
           ]}
         />
         <PrizeCard
@@ -86,6 +93,7 @@ const Prizes = () => {
             "💸 $20 Amazon Gift Card",
             "✨ Figma T-shirt",
             "▲ Vercel Hat",
+            "🐮 Discount on any X-Camp USACO Class",
           ]}
         />
         <PrizeCard
@@ -95,6 +103,7 @@ const Prizes = () => {
             "💸 $20 Amazon Gift Card",
             "🦕 Orpheus Plushie",
             "▲ Vercel Hat",
+            "🐮 Discount on any X-Camp USACO Class",
           ]}
         />
         <PrizeCard
