@@ -2,6 +2,7 @@ import { Fragment } from "react";
 
 interface Event {
   name: string;
+  description?: string;
   start: `${number}:${number}`;
   end: `${number}:${number}`;
   tag?: Tag;
@@ -69,6 +70,7 @@ const data: EventOrArrayOfEvents[] = [
   },
   {
     name: "🤖 Build a Python Discord Bot",
+    description: "by Sarvesh Madullapalli",
     start: "15:00",
     end: "16:00",
     tag: "workshop",
@@ -81,6 +83,7 @@ const data: EventOrArrayOfEvents[] = [
   },
   {
     name: "💻 An Overview of Git",
+    description: "by Dennis Chen",
     start: "16:30",
     end: "17:30",
     tag: "workshop",
@@ -159,6 +162,9 @@ const EventCard = ({ event }: { event: Event | Event[] }) => {
           style={{ width: `${100 / numEvents}%` }}
         >
           {e.name}
+          {e.description ? (
+            <p className="text-sm text-gray-700">{e.description}</p>
+          ) : null}
           {e.tag === "workshop" ? (
             <span className="absolute right-2 bottom-2 hidden rounded-full bg-primary-300 px-2 py-0.5 text-sm font-semibold text-primary-700 group-hover:block sm:block">
               Workshop
